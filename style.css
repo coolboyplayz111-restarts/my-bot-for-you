@@ -1,0 +1,48 @@
+:root{
+  --bg:#0f1221;
+  --panel:#11121b;
+  --muted:#9aa3d6;
+  --accent:#6a9cff;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: linear-gradient(180deg,#071024 0%, #0f1221 60%);
+  color: #e9eefc;
+  min-height:100vh;
+}
+.topbar{
+  padding:18px 24px;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+}
+.topbar h1{margin:0;font-size:20px}
+.subtitle{color:var(--muted);font-size:13px}
+
+.container{display:flex;gap:20px;padding:24px;align-items:flex-start}
+.panel{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:12px;
+  padding:16px;
+  box-shadow: 0 6px 20px rgba(10,12,20,0.6);
+  flex:1;
+  min-width:300px;
+}
+.bots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.bot-card{
+  background:var(--glass);
+  padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);
+}
+.bot-card h4{margin:0 0 6px 0}
+.meta{color:var(--muted);font-size:13px;margin-top:6px}
+.hidden{display:none}
+
+#bot-view button{background:transparent;border:none;color:var(--muted);cursor:pointer;margin-bottom:10px}
+#entities{list-style:none;padding-left:0;margin-top:8px;color:var(--muted)}
+.footer{padding:16px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,0.02)}
+@media (max-width:900px){.container{flex-direction:column;padding:12px}}
