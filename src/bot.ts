@@ -42,15 +42,24 @@ function createBot(): void {
 function startActions(): void {
   if (!bot) return
 
+  const activeBot = bot
+
   loop = setInterval(async () => {
+    // Stop if bot changed or disconnected
+    if (!activeBot || activeBot !== bot) return
+    if (!activeBot.player) return
+
     const action = getRandom(CONFIG.action.commands) as ControlState
     const sprint = Math.random() < 0.5
 
-    bot!.setControlState('sprint', sprint)
-    bot!.setControlState(action, true)
+    activeBot.setControlState('sprint', sprint)
+    activeBot.setControlState(action, true)
 
     await sleep(CONFIG.action.holdDuration)
-    bot!.clearControlStates()
+
+    // Bot may have disconnected while sleeping
+    if (activeBot !== bot) return
+    activeBot.clearControlStates()
   }, CONFIG.action.holdDuration)
 }
 
