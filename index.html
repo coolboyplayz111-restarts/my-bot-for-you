@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AterBot Dashboard</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>AterBot</h1>
+    <div class="subtitle">Multi-bot dashboard — live health, hunger, position & view</div>
+  </header>
+
+  <main class="container">
+    <section id="dashboard" class="panel">
+      <h2>Bots</h2>
+      <div id="bots-list" class="bots-grid">Loading...</div>
+    </section>
+
+    <section id="bot-view" class="panel hidden">
+      <button id="back">← Back</button>
+      <h2 id="bot-title">Bot</h2>
+      <div id="bot-info">
+        <div><strong>Online:</strong> <span id="bot-online"></span></div>
+        <div><strong>Health:</strong> <span id="bot-health"></span></div>
+        <div><strong>Hunger:</strong> <span id="bot-food"></span></div>
+        <div><strong>Position:</strong> <span id="bot-pos"></span></div>
+        <div><strong>Looking at:</strong> <span id="bot-looking"></span></div>
+      </div>
+      <h3>Nearby entities</h3>
+      <ul id="entities"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">Keep your Aternos server alive — use Replit + UptimeRobot to run 24/7</footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
