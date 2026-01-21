@@ -13,5 +13,6 @@
 	"dependencies": {
 		"mineflayer": "^4.20.0",
 		"tsx": "^4.7.1"
+		 "express": "^4.18.2"
 	}
 }
